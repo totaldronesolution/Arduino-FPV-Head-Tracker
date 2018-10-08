@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Unknown</title>
+	<meta name="generator" content="LibreOffice 5.3.6.1 (Linux)"/>
+	<meta name="author" content="Mark"/>
+	<meta name="created" content="2018-10-08T05:05:30"/>
+	<meta name="changedby" content="calibre"/>
+	<meta name="changed" content="2018-10-08T05:05:30"/>
+	<meta name="AppVersion" content="03.0031"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="true"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		h1 { margin-top: 0.33in; margin-bottom: 0in; color: #365f91; line-height: 0.23in; background: #ffffff; page-break-after: auto }
+		h1.western { font-family: "Cambria", serif; font-size: 13pt }
+		h1.cjk { font-family: "Cambria"; font-size: 13pt }
+		h1.ctl { font-family: "Cambria"; font-size: 13pt }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="en" dir="ltr">
+<h1 class="western" style="page-break-inside: avoid; page-break-before: auto; page-break-after: avoid"><a name="DIY_Headtracker"></a>
+DIY Headtracker</h1>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">Design
+and software by Anurag Pandey (<font color="#0000ff"><u>helpmeinproject@gmail.com</u></font>)</span></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><font size="3" style="font-size: 11pt"><span style="background: #ffffff">Main
+RCGroups discussion (recommended reading):
+<font color="#0000ff"><font face="Calibri, serif"><span style="background: #ffffff"><a href="http://www.rcgroups.com/forums/showthread.php?t=1677559">http://www.rcgroups.com/forums/showthread.php?t=1677559</a></span></font></font></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">Google
+Code repository: <font color="#0000ff"><u><a href="http://code.google.com/p/open-headtracker/">http://code.google.com/p/open-headtracker/</a></u></font></span></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%; background: #ffffff">
+<b>Required hardware</b></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Arduino
+Nano</span></span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">9-axis
+IMU sensor board&nbsp;<br/>
+<span style="background: #ffffff">&nbsp;</span></span></p>
+<p style="margin-bottom: 0in; line-height: 115%"><b>Sources for
+hardware:</b></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">Arduino
+Nano:<font color="#0000ff"><u><a href="http://www.dealextreme.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037?item=8">http://www.dealextreme.com/p/nano-v3...-118037?item=8</a><a href="http://www.hobbyking.com/hobbyking/store/__25086__Arduino_Nano_V3_0_Microcontroller_Board.html">http://www.hobbyking.com/hobbyking/s...ler_Board.html</a><a href="http://www.dealextreme.com/p/arduino-nano-v3-0-81877?item=2">http://www.dealextreme.com/p/arduino...0-81877?item=2<br/>
+</a></u></font>Sensor
+board (9-axis
+IMU):<font color="#0000ff"><u><a href="http://www.dealextreme.com/p/gy-85-6dof-9dof-imu-sensor-module-for-arduino-148436">http://www.dealextreme.com/p/gy-85-6...arduino-148436</a><a href="http://www.ebay.com/itm/ws/eBayISAPI.dll?ViewItem&amp;item=270962872404&amp;ssPageName=ADME:L:OC:US:3160">http://www.ebay.com/itm/ws/eBayISAPI...E:L:OC:US:3160</a><a href="http://www.goodluckbuy.com/gy-85-sensor-modules-6dof-9dof-imu-sensor-.html">http://www.goodluckbuy.com/gy-85-sen...u-sensor-.html</a><a href="http://www.goodluckbuy.com/nine-axis-dgree-of-freedom-imu-sensor-itg3200-itg3205-adxl345-hmc5883l-module.html">http://www.goodluckbuy.com/nine-axis...3l-module.html<br/>
+</a></u></font>This
+project is made as user-friendly as possible while maintaining
+flexibility for developers and tinkerers. Only a little technical
+knowledge should be necessary. All necessary settings can be changed
+from a graphical user interface, making it easy for everyone to use.&nbsp;</span></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">A
+quick test-video can be found here. It's hard to show if a
+headtracker works well or not, so it's just a quick
+test-video.<font color="#003bb5"><u><a href="https://dl.dropbox.com/u/3947315/Videogdp.3gp">https://dl.dropbox.com/u/3947315/Videogdp.3gp<br/>
+<br/>
+</a></u></font><span style="background: #ffffff">&nbsp;</span></span></p>
+<p style="margin-bottom: 0.14in; line-height: 0.23in"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 0.23in; page-break-before: always">
+<font color="#365f91"><font face="Cambria, serif"><font size="4" style="font-size: 13pt"><b>Connection
+pinout</b></font></font></font></p>
+<p align="center" style="margin-bottom: 0in; line-height: 115%"><img src="output_html_edbe0074db8ea9be.png" name="image.png" align="bottom" hspace="12" width="325" height="440" border="0"/>
+</p>
+<p align="center" style="margin-bottom: 0in; line-height: 115%"><b>Figure:
+Connection diagram (centering button not shown between D11 and GND) </b>
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 0.23in"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%; page-break-before: always">
+<font size="3" style="font-size: 11pt"><span style="background: #ffffff"><font color="#365f91"><font face="Cambria, serif"><font size="4" style="font-size: 13pt"><span style="background: #ffffff">Assembly
+and flashing quick guide&nbsp;</span></font></font></font>You should
+have:1 x Arduino Nano or similar1 x Sensor board<br/>
+<span style="background: #ffffff">&nbsp;</span></span></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">First,
+let’s assemble the hardware. It's pretty straight forward. Connect
+the pins as specified in the following table.<br/>
+&nbsp;</span></span></font></font></font></p>
+<table width="4369" cellpadding="4" cellspacing="0">
+	<col width="2175">
+	<col width="2176">
+	<tr valign="top">
+		<td width="2175" bgcolor="#d9d9d9" style="background: #d9d9d9" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p align="left"><b>Sensorboard Pin</b></p>
+		</td>
+		<td width="2176" bgcolor="#d9d9d9" style="background: #d9d9d9" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p align="left"><b>Arduino Pin</b></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>Vcc_in</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>5 volt</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>GND</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>Ground/GND</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>SCL</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>A5</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>SDA</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>A4</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<table width="4369" cellpadding="4" cellspacing="0">
+	<col width="2175">
+	<col width="2176">
+	<tr valign="top">
+		<td width="2175" bgcolor="#d9d9d9" style="background: #d9d9d9" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p align="left"><b>Transmitter</b></p>
+		</td>
+		<td width="2176" bgcolor="#d9d9d9" style="background: #d9d9d9" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p align="left"><b>Arduino Pin</b></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>PPM_IN</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>D9</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>V_out</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>V_in</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="2175" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>Ground</p>
+		</td>
+		<td width="2176" style="border: 1.00pt solid #000001; padding: 0.04in 0.07in">
+			<p>Ground/GND</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Optionally,
+a reset button can be placed between Arduino pin D11 and ground. You
+can use any momentary pushbutton or toggle switch for this. This
+button can then be used to re-center the tracker if you change
+orientation while you’re flying. It can also be used to
+pause/unpause head tracking by holding the button for 1.5 seconds, if
+your setup requires this.<br/>
+<br/>
+The sensor board pins match
+pretty well with the Arduino pins, so you can just connect it
+directly. The only pin that doesn't match is ground.&nbsp;I recommend
+soldering a short wire between one of the Arduino ground pins and the
+Arduino pin A6(which is connected to the sensor board’s ground
+pin). The Arduino pin will be set as an input, so connecting it to
+ground will not cause any issues with the Arduino’s
+microprocessor.<br/>
+<br/>
+The recommended configuration for the
+sensor board is to place it underneath the Arduino board, like in the
+following picture. It is, however, possible to remotely mount the
+sensor board away from the Arduino module, or place it in other
+configurations. Just make sure the pins match as specified. Please
+remember that the magnetometer is pretty sensitive. Even small
+currents nearby will cause a magnetic field. If it's a constant
+field, chances are you can calibrate it, but please be aware of this
+problem.</span></span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">You
+can test your board without soldering the sensor board and using a
+temporary jumper between GND and A6.Once your tests are complete and
+you have the tracker working, solder the sensor board to the Arduino,
+and solder in a permanent jumper between the Arduino’s GND pin and
+A6. You can also (optionally) cut or desolder unused pins from the
+Arduino, including the 6-pin ISP header.<br/>
+&nbsp;</span></span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 521px"><img src="output_html_387b7b4242158221.jpg" name="image.jpeg" width="521" height="391" border="0"/>
+</span><br/>
+
+</p>
+<p align="center" style="margin-left: 0.5in; margin-bottom: 0.14in; line-height: 115%; background: #ffffff">
+<b>Figure: Recommended hardware assembly configuration. Jumper
+between A6 and GND (underneath the Arduino) cannot be seen in this
+image.<br/>
+<br/>
+&nbsp;</b></p>
+<p align="center" style="margin-bottom: 0.14in; line-height: 115%; background: #ffffff">
+<img src="output_html_3ed13313674e6c4a.jpg" name="image-1.jpeg" align="bottom" hspace="12" width="423" height="563" border="0"/>
+<b><span style="background: #ffffff"><br/>
+</span>Figure:
+For testing, a simple jumper can be used. Not recommended for final
+installation.<br/>
+<br/>
+&nbsp;</b></p>
+<p style="margin-bottom: 0.14in; line-height: 115%; background: #ffffff">
+<b>Getting the Arduino software set up:</b></p>
+<ol>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Download
+	Arduino IDE from&nbsp;<font color="#0000ff"><u><a href="http://arduino.cc/hu/Main/Software">http://arduino.cc/hu/Main/Software</a></u></font>&nbsp;(should
+	be version 1 or higher)</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Connect
+	your Arduino board to your PC through the USB connector</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">If
+	the driver is installed automatically, just continue. If not, select
+	the folder called &quot;Driver&quot; inside the Arduino IDE folder</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Download
+	the latest headtracker-software
+	from&nbsp;<font color="#0000ff"><u><a href="http://code.google.com/p/open-headtracker/">http://code.google.com/p/open-headtracker/</a></u></font></span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Open
+	Arduino IDE (the program), Select file -&gt; Open, find the
+	headtracker software downloaded and open the file
+	DIY_headtracker.ino</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">You
+	should now have a window looking pretty much like this:<br/>
+<img src="output_html_6fb5b757addffed3.png" name="image-1.png" align="bottom" hspace="12" width="500" height="600" border="0"/>
+</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Go
+	to tools -&gt; Board and select &quot;Arduino Nano w/Atmega328</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Go
+	to tools -&gt; Serial port -&gt; Select the com-port used by Arduino
+	(you should remember the port-number for later use in the GUI).</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Press
+	the left-arrow in Arduino IDE to upload, or select file -&gt;
+	Upload, or press Ctrl + u.</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Hopefully
+	it starts to upload the firmware. It should flash the LED's quickly
+	for&nbsp;<br/>
+a while, and stop when the upload/programming is
+	complete.&nbsp;<br/>
+<br/>
+<b>Calibration</b></span></span></font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Before
+your headtracker can be used for accurate head tracking, you must
+first calibrate it. Calibration is done through thecalibration button
+(or menu option) in the GUI. After you connect the GUI to your
+headtracker, press the “Calibrate” button and follow the
+on-screen prompts and pictures.</span></span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><span style="background: #ffffff"><br/>
+</span><span lang="en">Hopefully
+that's it, and you are ready to go.&nbsp;<br/>
+<br/>
+Some known
+limitations:</span></span></p>
+<ul>
+	<li/>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+	<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">The
+	sensorboard must be orientated with the components up.</span></span></font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.14in; line-height: 115%; background: #ffffff">
+	<font size="3" style="font-size: 11pt">Nothing in the GUI is &quot;idiot
+	proof&quot;. It will accept more or less everything and just do
+	it.<br/>
+&nbsp;</font></p>
+</ul>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><font size="3" style="font-size: 11pt"><span style="background: #ffffff"><span style="background: #ffffff">Here’s
+a shot of the two pieces of hardware as they appear out of the
+package:<img src="output_html_da190712b7a47f18.jpg" name="image-2.jpeg" align="bottom" hspace="12" width="547" height="409" border="0"/>
+<br/>
+</span>Assembled
+hardware - just missing connections to RC-transmitter. It’s not
+visible in this picture, but there’s a wire jumper on the bottom of
+the Arduino that connects the Arduino ground to the sensor board’s
+ground.</span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_c634689b53e90caa.jpg" name="image-3.jpeg" align="bottom" hspace="12" width="553" height="331" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+</span></font></font><span lang="en">Early
+test-version:</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_df7a449bb2462566.jpg" name="image-4.jpeg" align="bottom" hspace="12" width="624" height="467" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+</span></font></font><span lang="en">Graphical
+user interface<img src="output_html_421269fbc08ead44.png" name="image-2.png" align="bottom" hspace="12" width="565" height="701" border="0"/>
+<br/>
+-
+GUI showing advanced settings too:</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_8483d0e47f49694a.png" name="image-3.png" align="bottom" hspace="12" width="624" height="496" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+<br/>
+<br/>
+</span></font></font><span lang="en">Headtracker
+sensor plots, raw, filtered etc:</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 624px"><img src="output_html_e66d08d46b247af0.png" name="image-4.png" width="624" height="149" border="0"/>
+</span><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_c799b36e799345c3.png" name="image-5.png" align="bottom" hspace="12" width="624" height="164" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+<br/>
+<br/>
+</span></font></font><font color="#365f91"><font face="Cambria, serif"><font size="4" style="font-size: 13pt"><span style="background: #ffffff">Using
+the GUI</span></font></font></font><b>&nbsp;<br/>
+<br/>
+PPM
+channels</b>Used to set the PPM-channel pan, tilt, and roll are
+assigned to.<br/>
+<b>Center</b>The center position of the servo for
+each axis.<br/>
+<b>End</b>Servo travel endpoints (maximum and
+minimum)<br/>
+<b>Gain</b>The gain determines how much the servo
+should move for a given amount of tracker movement. Default is 170
+which pretty much gives 1:1 (90 degrees head-movement = 90 degrees
+servo movement).&nbsp;<br/>
+<br/>
+<b>All the &quot;advanced
+settings&quot;</b>- - - -&nbsp;<b>LP filter at tilt/roll
+[%]</b>Lowpass-filter of the final tilt/roll output.1 = max
+lowpass/time constant. Will give very smooth, but also very slow
+change.&nbsp;100 = lowpass off.&nbsp;<br/>
+<b>LP filter at pan
+[%]</b>Lowpass-filter of the final pan output.1 = max lowpass/time
+constant. Will give very smooth, but also very slow change.&nbsp;100
+= lowpass off.&nbsp;<br/>
+<b>Gyro weight on tilt/roll [%]</b>How much
+do we thrust the gyro compared to the accelerometer on the tilt/roll
+axis? Accelerometer is noisy and should only be used to slowly
+compensate for drift.&nbsp;100 = only use gyro.0 = only use
+accelerometer<br/>
+<b>Gyro weight on pan [%]</b>How much do we thrust
+the gyro compared to the magnetometer on the pan-axis? The gyro is a
+lot more accurate, so magnetometer should only be used to slowly
+compensate drift.&nbsp;100 = only use gyro0 = only use
+magnetometer<br/>
+<b>Servo pulse variation</b>In short: Servo travel
+adjustment.<br/>
+Used to set the max variation of the pulse-width in
+the PPM signal. The unit is microseconds*2 - matching the Atmega
+timer&nbsp;<br/>
+<b>Servo center</b>In short: Servo neutral
+position<br/>
+Used to set the center/default length of the
+pulse-width in the PPM signal. The unit is microseconds*2 - matching
+the Atmega timer&nbsp;<br/>
+<b>Tilt and roll gain</b>Gain of the
+servo. You decide if you want to turn the head 10 degrees or 360
+degrees to get full travel.&nbsp;<br/>
+<b>Pan gain</b>Gain of the
+servo. You decide if you want to turn the head 10 degrees or 360
+degrees to get full travel.&nbsp;<br/>
+<b>Reverse (Tilt, roll and
+Pan)</b>used to inverse the servo direction.&nbsp;<br/>
+<br/>
+<font color="#365f91"><font face="Cambria, serif"><font size="4" style="font-size: 13pt"><span style="background: #ffffff">General
+questions<br/>
+</span></font></font></font><b>Can I use other Arduino
+versions?</b>Sure, all Arduino boards should have the necessary pins
+available (as far as I know). I have choosen Arduino Nano as it's
+cheap, small, have FTDI onboard and the regulator can handle a bit
+higher current, compared to Arduino Pro etc. But pick whatever you
+prefer/have available.&nbsp;<br/>
+<b>Can I use other sensors?</b>It
+should be pretty easy to use other sensors, as long as it's I2C.
+Update the sensor-init, sensor-reading and the sensor-configuration
+and you should more or less be good to go. I'll maybe add support for
+another IMU later.&nbsp;<br/>
+<b>Can I buy a headtracker from you?</b>No,
+it's meant as a DIY project. It's easy to make, and it should be
+pretty straight forward. I like to develop, but care little about
+sale etc.&nbsp;<img src="output_html_51a07b5897ae354.gif" name="image.gif" align="bottom" hspace="12" width="16" height="16" border="0"/>
+<br/>
+<b>Can
+I sell this?</b>Feel free. I can imagine a few people would like to
+buy a nice ready-made unit, but it would be great to know if you use
+my software/work. But in general it's uploaded with no strings
+attached.&nbsp;<br/>
+<b>What about copyright/license etc?</b>It's
+uploaded as OpenSource, and I expect it to be used and abused - don't
+really see much sense in &quot;protecting&quot; my work. So feel free
+to use it for whatever purpose.<br/>
+<br/>
+<br/>
+<br/>
+<span style="background: #ffffff">&nbsp;</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff">A
+few pictures from other peoples build<b>, for reference</b></span></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Arial, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">SpookiePower&nbsp;</span></span></font></font></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 509px"><img src="output_html_16e53d710c3f332b.jpg" name="image-5.jpeg" width="509" height="339" border="0"/>
+</span><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_fd9ea36a6f7789d5.jpg" name="image-6.jpeg" align="bottom" hspace="12" width="585" height="388" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+</span></font></font><span lang="en">SubSonic:</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span style="background: #ffffff"><img src="output_html_ea1c4f41a7ad67c8.jpg" name="image-7.jpeg" align="bottom" hspace="12" width="472" height="352" border="0"/>
+<img src="output_html_9969879a0cf71366.jpg" name="image-8.jpeg" align="bottom" hspace="12" width="519" height="387" border="0"/>
+<img src="output_html_67477ba540726c04.jpg" name="image-9.jpeg" align="bottom" hspace="12" width="405" height="303" border="0"/>
+<font size="3" style="font-size: 11pt"><font face="Cambria, serif"><font size="2" style="font-size: 9pt"><span style="background: #ffffff"><br/>
+</span></font></font><span lang="en">Jalves:<img src="output_html_a8ba9caa231cb19a.jpg" name="image-10.jpeg" align="bottom" hspace="12" width="468" height="351" border="0"/>
+<br/>
+BlueAngel</span></span></font></p>
+<p style="margin-bottom: 0in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 505px"><img src="output_html_d23dd26fbb9c1371.jpg" name="image-11.jpeg" width="505" height="268" border="0"/>
+</span><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 508px"><img src="output_html_fd4ebb7135fe6594.jpg" name="image-12.jpeg" width="508" height="280" border="0"/>
+</span><br/>
+
+</p>
+<p style="margin-bottom: 0.14in; line-height: 115%"><span class="sd-abs-pos" style="position: absolute; top: 0in; left: 0in; width: 433px"><img src="output_html_2f6eb95013438d0e.jpg" name="image-13.jpeg" width="433" height="239" border="0"/>
+</span><br/>
+<br/>
+
+</p>
+</body>
+</html>
